@@ -63,13 +63,6 @@ credentials:
           scope: GLOBAL
 
 tool:
-  git:
-    installations:
-    - home: "git"
-      name: "Default"
-  mavenGlobalConfig:
-    globalSettingsProvider: "standard"
-    settingsProvider: "standard"
   sonarRunnerInstallation:
     installations:
     - name: "SonarQube"
@@ -78,6 +71,21 @@ tool:
           installers:
           - sonarRunnerInstaller:
               id: "5.0.1.3006"
+
+unclassified:
+  location:
+    url: "http://192.168.44.44:8880/"
+  sonarGlobalConfiguration:
+    buildWrapperEnabled: true
+    installations:
+    - name: "SonarQube"
+      serverUrl: "http://192.168.44.44:9000"
+      triggers:
+        skipScmCause: false
+        skipUpstreamCause: false
+  locale: 
+    ignoreAcceptLanguage: true 
+    systemLocale: "en" 
       
 security:
   apiToken:
@@ -106,88 +114,3 @@ security:
   scriptApproval:
     approvedScriptHashes:
     - "SHA512:3f205299bef2fe3329258a42f2c60d332cc35ccb41a3ca0512d7869c6aff4561ff708c48123b4f7c3dec33ccca30d54fb8b9b51b5bc7070f96236d11a3f0bdcb"
-
-unclassified:
-  buildDiscarders:
-    configuredBuildDiscarders:
-    - "jobBuildDiscarder"
-  buildStepOperation:
-    enabled: false
-  email-ext:
-    adminRequiredForTemplateTesting: false
-    allowUnregisteredEnabled: false
-    charset: "UTF-8"
-    debugMode: false
-    defaultBody: |-
-      $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
-
-      Check console output at $BUILD_URL to view the results.
-    defaultContentType: "text/plain"
-    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
-    defaultTriggerIds:
-    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
-    maxAttachmentSize: -1
-    maxAttachmentSizeMb: -1
-    precedenceBulk: false
-    watchingEnabled: false
-  enrichedSummaryConfig:
-    enrichedSummaryEnabled: false
-    httpClientDelayBetweenRetriesInSeconds: 1
-    httpClientMaxRetries: 3
-    httpClientTimeoutInSeconds: 1
-  fingerprints:
-    fingerprintCleanupDisabled: false
-    storage: "file"
-  gitHubConfiguration:
-    apiRateLimitChecker: ThrottleForNormalize
-  gitHubPluginConfig:
-    hookUrl: "http://192.168.44.44:8880/github-webhook/"
-  globalTimeOutConfiguration:
-    operations:
-    - "abortOperation"
-    overwriteable: false
-  injectionConfig:
-    allowUntrusted: false
-    checkForBuildAgentErrors: false
-    enabled: false
-    enforceUrl: false
-    injectCcudExtension: false
-    injectMavenExtension: false
-  junitTestResultStorage:
-    storage: "file"
-  locale:
-    ignoreAcceptLanguage: false
-    systemLocale: "en:us"
-  location:
-    adminAddress: "adres jeszcze nie jest skonfigurowany <nobody@nowhere>"
-    url: "http://192.168.44.44:8880/"
-  mailer:
-    charset: "UTF-8"
-    useSsl: false
-    useTls: false
-  pluginImpl:
-    enableCredentialsFromNode: false
-  pollSCM:
-    pollingThreadCount: 10
-  prismConfiguration:
-    theme: PRISM
-  scmGit:
-    addGitTagAction: false
-    allowSecondFetch: false
-    createAccountBasedOnEmail: false
-    disableGitToolChooser: false
-    hideCredentials: false
-    showEntireCommitSummaryInChanges: false
-    useExistingAccountWithSameEmail: false
-  sonarGlobalConfiguration:
-    buildWrapperEnabled: false
-    installations:
-    - name: "SonarQubeServer"
-      serverUrl: "http://192.168.44.44:9000"
-      triggers:
-        skipScmCause: false
-        skipUpstreamCause: false
-  timestamper:
-    allPipelines: false
-    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
-    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"

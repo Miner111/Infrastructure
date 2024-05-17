@@ -2,7 +2,7 @@ version: '2.4'
 services:
   jenkins:
     container_name: jenkins 
-    build: .
+    build: jenkins_controller
     ports:
       - "8880:8080"
       - "50000:50000"
