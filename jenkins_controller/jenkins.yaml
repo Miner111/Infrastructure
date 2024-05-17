@@ -8,8 +8,68 @@ jenkins:
     globalMatrix:
       permissions:
         - "Overall/Administer:panda"
+  numExecutors: 0
+
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - basicSSHUserPrivateKey:
+          id: "klucz_github"
+          privateKeySource:
+            directEntry:
+              privateKey: "{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}"
+          scope: GLOBAL
+          username: "Miner111"
+      - usernamePassword:
+          description: "sonarcube credentials"
+          id: "login_sonarcube"
+          password: "{AQAAABAAAAAQvw/ElpPrip6pz/+cQHLhDa9nWReCiJaJzti+ssCw2Cg=}"
+          scope: GLOBAL
+          username: "admin"
+      - basicSSHUserPrivateKey:
+          id: "jenkins_agent"
+          username: "jenkins"
+          privateKeySource:
+            directEntry:
+              privateKey: |
+                -----BEGIN RSA PRIVATE KEY-----
+                MIIEpAIBAAKCAQEAmicV5fguBrJiHK7F0Ppqkv7fUjbBa7Y+S333Zza/PvWuNFFB
+                w19ZintulPKEmqwnIi2BLV1rFrZdVZkEuiQHVSOb2SktidDbeqHvgB/ctj4S+sLa
+                lLHpdmiR1JPMNdw35LfsOrWQUMQrswQ71kbeobKa1bib1qCAjGWp1TqF2/gXycfd
+                d95hv7r4hf64LRKp+Qqk2x1jdXFLPo3otBjpX8kK/xkez+XD+m2sXucsQnm6IZYG
+                2Lw68FE9mQUpSRyGqm623gRf8ooAnFggPc+Oj7mynP6iHA2OanhbpXctJqhHaTCC
+                wy43K7YnZ6eML0WvHMWZeMPXzWBsCvAuev2/ZwIDAQABAoIBAEJle2UmVIzF4MSB
+                8upkMetGpGIA+6atRH+3rgxi5FT19SbLqQvB0gt3xtWY78y/QcvS1cT4a9vIiMMJ
+                uaODSTU+tS4AMoEd2KslfMcu8h389qfTrdpGF0zNFaL+VgMM63Y0UiendJWVKU1e
+                EXfl5pa3G0Ha1iTH1Raj41bYcjegI1kNl1chilQs+iUNviQAmfMB5FAZaz4BcNnk
+                KdGZiVQDxT7t5LPXcjNmRlzIBBz/VLtj6u7D8cM7Jwp0mN+apAlIZ212CFzWpNRl
+                Bgy1x53xyPWk++Jr3Ti5ewdxIGwu4cDsET18MUOA1bMEQsWamCFSrw+TR7bKGVB4
+                WuQOA+ECgYEA55e/K++vlpOH4GT/YelNZaKmXs/Qzip0KxyQbRzHhPk8Y/ZNz7Zj
+                jxw60anwdkEheiloBBtw3O5+gVidy8UJh5LZgZhPiZc85bluoKRyDGtRHKmJqTc5
+                DpX0A3DquF1lshcFSNornYSiwryp09YYfCxyL9O/X9zbabfQxscgchMCgYEAqmYL
+                l41A4dRhsBtpc6HrFcyCBrAodU18UdZF2ymWubUvl89pzWWmkqbo3xrXbtKNvclO
+                IVUCz3MkJ4qguUrfDWv+Qc6QCXGMIz0T2L/26rE4Ksv4kV4RHq11nmQa6dZKHHN0
+                KF/yQEVwGpf29OBK22fLKAl7GPyCr7y1A2VIR90CgYAWyvaDqnlLhoWO7iG8TyvQ
+                3usk1aslP0RjodINCxIP4j+xTuJlmPu/b/XSALmryckzrrOQA+tdsxM8Q650CZZg
+                g3FoscbSMdJKga+Dm+ulkUJQYdcskkTJTLTRSeGv93E0z9MzUlWMkSs7oznLoXyT
+                bARo9JwXITNu+ipQBfUJhQKBgQCTxel5pctFzYxmUG90E1CvV+rPaAe+KtOMmTl9
+                piSLqsC6c+q6cNQzTEKZ8UoxVrILi7+REotcYutQy101M+QaXLRkV4H8Xpd8m+RR
+                TbERuV0PaFKJpr1MEHv3P7NDZU5iPBHZTdPlvxJITc+ib70bZ3j8oLQ7aAjh5NJK
+                PpSflQKBgQDk1DqibVOtmTadXDno2dYpZFX4my0ucqHAKVAUQREyKqkLdhHq8osy
+                vHoVFMY0B2SYTiTNEa4Pe8rv+zaXliYVZoq2P/XbEK4qoWl2QpWxTSz4cYHUoiZN
+                o1epS4clbUspxKat9tbIIRccKa9GWXVDNLih8TslLCBoL/knJc+aqw==
+                -----END RSA PRIVATE KEY-----
+          scope: GLOBAL
 
 tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
   sonarRunnerInstallation:
     installations:
     - name: "SonarQube"
@@ -18,15 +78,116 @@ tool:
           installers:
           - sonarRunnerInstaller:
               id: "5.0.1.3006"
+      
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  gitHooks:
+    allowedOnAgents: false
+    allowedOnController: false
+  gitHostKeyVerificationConfiguration:
+    sshHostKeyVerificationStrategy:
+      manuallyProvidedKeyVerificationStrategy:
+        approvedHostKeys: |-
+          # github.com:22 SSH-2.0-babeld-9713928c
+          |1|Y787WPQ7+Uxf76NpyCWwUnHjR7I=|QbW4le0iGkO+ms0b2TAeUGVKf+k= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCj7ndNxQowgcQnjshcLrqPEiiphnt+VTTvDP6mHBL9j1aNUkY4Ue1gvwnGLVlOhGeYrnZaMgRK6+PKCUXaDbC7qtbW8gIkhL7aGCsOr/C56SJMy/BCZfxd1nWzAOxSDPgVsmerOBYfNqltV9/hWCqBywINIR+5dIg6JTJ72pcEpEjcYgXkE2YEFXV1JHnsKgbLWNlhScqb2UmyRkQyytRLtL+38TGxkxCflmO+5Z8CSSNY7GidjMIZ7Q4zMjA2n1nGrlTDkzwDCsw+wqFPGQA179cnfGWOWRVruj16z6XyvxvjJwbz0wQZ75XK5tKSb7FNyeIEs4TT4jk+S4dhPeAUC5y+bDYirYgM4GC7uEnztnZyaVWQ7B381AK4Qdrwt51ZqExKbQpTUNn+EjqoTwvqNj4kqx5QUCI0ThS/YkOxJCXmPUWZbhjpCg56i+2aB6CmK2JGhn57K5mj0MNdBXA4/WnwH6XoPWJzK5Nyu2zB3nAZp+S5hpQs+p1vN1/wsjk=
+          # github.com:22 SSH-2.0-babeld-9713928c
+          |1|kEo5oL8sDQk+O9e140T1cnKvafI=|U9EjsgVMvDOdwdYVkSM+eT6gzJo= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=
+          # github.com:22 SSH-2.0-babeld-9713928c
+          |1|RHWjVLgIGvSyYaLc6QchLULVYl0=|8my6XPaqzkMuMheFFGZEq1D2NZ4= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl
+          # github.com:22 SSH-2.0-babeld-9713928c
+          # github.com:22 SSH-2.0-babeld-9713928c
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: true
+  sSHD:
+    port: -1
+  scriptApproval:
+    approvedScriptHashes:
+    - "SHA512:3f205299bef2fe3329258a42f2c60d332cc35ccb41a3ca0512d7869c6aff4561ff708c48123b4f7c3dec33ccca30d54fb8b9b51b5bc7070f96236d11a3f0bdcb"
 
 unclassified:
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  buildStepOperation:
+    enabled: false
+  email-ext:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: |-
+      $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+      Check console output at $BUILD_URL to view the results.
+    defaultContentType: "text/plain"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    defaultTriggerIds:
+    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: -1
+    precedenceBulk: false
+    watchingEnabled: false
+  enrichedSummaryConfig:
+    enrichedSummaryEnabled: false
+    httpClientDelayBetweenRetriesInSeconds: 1
+    httpClientMaxRetries: 3
+    httpClientTimeoutInSeconds: 1
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "http://192.168.44.44:8880/github-webhook/"
+  globalTimeOutConfiguration:
+    operations:
+    - "abortOperation"
+    overwriteable: false
+  injectionConfig:
+    allowUntrusted: false
+    checkForBuildAgentErrors: false
+    enabled: false
+    enforceUrl: false
+    injectCcudExtension: false
+    injectMavenExtension: false
+  junitTestResultStorage:
+    storage: "file"
+  locale:
+    ignoreAcceptLanguage: false
+    systemLocale: "en:us"
   location:
+    adminAddress: "adres jeszcze nie jest skonfigurowany <nobody@nowhere>"
     url: "http://192.168.44.44:8880/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  pluginImpl:
+    enableCredentialsFromNode: false
+  pollSCM:
+    pollingThreadCount: 10
+  prismConfiguration:
+    theme: PRISM
+  scmGit:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
   sonarGlobalConfiguration:
-    buildWrapperEnabled: true
+    buildWrapperEnabled: false
     installations:
-    - name: "SonarQube"
+    - name: "SonarQubeServer"
       serverUrl: "http://192.168.44.44:9000"
       triggers:
         skipScmCause: false
         skipUpstreamCause: false
+  timestamper:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
