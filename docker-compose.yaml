@@ -14,8 +14,8 @@ services:
     restart: always
   
   jenkins_agent:
-    depends_on:
-      - jenkins
+    # depends_on:
+    #   - jenkins
     container_name: jenkins_agent
     build: jenkins_agent
     ports:
