@@ -1,9 +1,9 @@
 version: '2.4'
 services:
   jenkins:
-    depends_on:
-      artifactory:
-        condition: service_healthy
+   # depends_on:
+   #   artifactory:
+   #     condition: service_healthy
     container_name: jenkins 
     build: jenkins_controller
     ports:
@@ -14,8 +14,8 @@ services:
     restart: always
   
   jenkins_agent:
-    # depends_on:
-    #   - jenkins
+     depends_on:
+       - jenkins
     container_name: jenkins_agent
     build: jenkins_agent
     ports:
